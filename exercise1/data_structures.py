@@ -41,15 +41,3 @@ valid_coords = ['q',
 'a8', 'b8', 'c8', 'd8', 'e8', 'f8', 'g8', 'h8']
 
 valid_pieces = ['q', 'test', 'queen', 'knight', 'rook']
-
-
-##############
-#
-#    utility method to return key of
-#    dictrionary value
-#
-############
-def get_key(dic, value):
-    for key in dic:
-        if (dic[key] == value):
-            return key
