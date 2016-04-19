@@ -33,3 +33,6 @@ To run a test of all possible outcomes for Queen, Knight, and Rook, input
 
 "    1. Please enter Piece(Queen,Knight,Rook): test    "
 
+    Input "q" to quit
+
+1. Please enter Piece(Queen,Knight,Rook):
