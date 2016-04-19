@@ -1,23 +1,9 @@
-# exercise1
-********************************************************************
+# Check Move
 
- #####
- #     # #    # ######  ####  #    #
- #       #    # #      #    # #   #
- #       ###### #####  #      ####
- #       #    # #      #      #  #
- #     # #    # #      #    # #   #
-  #####  #    # ######  ####  #    #
+Usage:
+python exercise1.py
 
 
-         #    #  ####  #    # ######
-         ##  ## #    # #    # #
-         # ## # #    # #    # #####
-         #    # #    # #    # #
-         #    # #    #  #  #  #
-         #    #  ####    ##   ######
-
-*****************************************************************************
 
 Check Move is an interactive terminal program designed to list all possibile
 coordinate postions "moves" for a given Chess piece based on an intial
@@ -35,4 +21,3 @@ To run a test of all possible outcomes for Queen, Knight, and Rook, input
 
     Input "q" to quit
 
-1. Please enter Piece(Queen,Knight,Rook):
