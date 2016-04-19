@@ -8,7 +8,6 @@
 ##############################
 from interface_service import *
 from rules_service import *
-from test_service import *
 
 
 print '''********************************************************************\n
