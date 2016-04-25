@@ -58,6 +58,8 @@ def rook_up(data):
     for i in range(0, col - y):
         y += 1
         store_rook.append(get_key(board_matrix, [x, y]))
+    if(mode['mode'] == 't'):
+        return store_rook
 
 
 def rook_down(data):
@@ -68,6 +70,8 @@ def rook_down(data):
     for i in range(0, y):
         y -= 1
         store_rook.append(get_key(board_matrix, [x, y]))
+    if(mode['mode'] == 't'):
+        return store_rook
 
 
 def rook_left(data):
@@ -78,6 +82,8 @@ def rook_left(data):
     for i in range(0, x):
         x -= 1
         store_rook.append(get_key(board_matrix, [x, y]))
+    if(mode['mode'] == 't'):
+        return store_rook
 
 
 def rook_right(data):
@@ -89,6 +95,8 @@ def rook_right(data):
     for i in range(0, (col - x)):
         x += 1
         store_rook.append(get_key(board_matrix, [x, y]))
+    if(mode['mode'] == 't'):
+        return store_rook
 
 
 ###############################
@@ -192,8 +200,12 @@ def rules_service_knight(data):
         if(len(store_knight) == 0):
             print("\nSorry no valid moves from that location\n")
         else:
-            print(data)
-            print ', '.join(store_knight) + "\n"
+            if(mode['mode'] == 't'):
+                return store_knight
+            else:
+                print(data)
+                print ', '.join(store_knight) + "\n"
+
     except:
         print ("\nNo valid moves availible from that location\n")
 

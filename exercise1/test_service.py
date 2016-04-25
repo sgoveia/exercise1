@@ -16,8 +16,14 @@
 ##############################
 from data_structures import *
 from rules_service import *
+from target_mode_service import *
 
 
+##############################
+#
+#    test_service_init
+#
+##############################
 def test_service_init():
     i = 0
     #fill board_matrix with string represintations of coords
@@ -28,7 +34,12 @@ def test_service_init():
             i += 1
 
 
-def test_service_run():
+##############################
+#
+#    test_service_standard_mode_run
+#
+##############################
+def test_service_standard_mode_run():
     # Run Queen Test
     for piece in board_coords:
         rules_service_queen(['queen', piece])
@@ -38,4 +49,21 @@ def test_service_run():
     # Run Knight Test
     for piece in board_coords:
         rules_service_knight(['knight', piece])
+
+
+##############################
+#
+#    test_service_target_mode_run
+#
+##############################
+def test_service_target_mode_run():
+    # Run Queen Test
+    for piece in board_coords:
+        target_mode_service_run(['queen', piece])
+    # Run Rook Test
+    for piece in board_coords:
+        target_mode_service_run(['rook', piece])
+    # Run Knight Test
+    for piece in board_coords:
+        target_mode_service_run(['knight', piece])
 

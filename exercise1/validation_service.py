@@ -19,6 +19,19 @@ from data_structures import *
 
 ##############################
 #
+#    check_mode()
+#
+##############################
+def check_mode(input):
+    user_input = input
+    if(not user_input in valid_modes):
+        return 'invalid'
+    else:
+        return user_input
+
+
+##############################
+#
 #    check_piece()
 #
 ##############################

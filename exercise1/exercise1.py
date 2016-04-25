@@ -27,17 +27,10 @@ print '''********************************************************************\n
          #    # #    #  #  #  #
          #    #  ####    ##   ######\n
 *****************************************************************************\n
-Check Move is an interactive terminal program designed to list all possibile
-coordinate postions \"moves\" for a given Chess piece based on an intial
-starting coordinate.
-\n
-Please follow the promt to list of all the potential board positions for
-the given piece and coordinate.\n
+Check Move is an interactive terminal program, have fun!
 
-To run a test of all possible outcomes for Queen, Knight, and Rook, input
-\"test\" at  prompt# 1. for example:\n
-\"    1. Please enter Piece(Queen,Knight,Rook): test    \"\n
     Input \"q\" to quit
+
 '''
 ####################################
 #
@@ -45,13 +38,17 @@ To run a test of all possible outcomes for Queen, Knight, and Rook, input
 #
 ####################################
 rules_service_init()
-
+target_mode_service_init()
 ####################################
 #
 #    main loop
 #
 ####################################
 while True:
+    mode = enter_mode()
+    if (mode == 'q'):
+        goodbye_message()
+        break
     piece = enter_piece()
     if (piece == 'q'):
         goodbye_message()
