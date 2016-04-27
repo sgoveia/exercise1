@@ -97,6 +97,25 @@ def find_furthest(coord):
         return ['Q4', 'a1']
 
 
+##############
+#
+#    get_random_pieces
+#
+############
+def get_random_pieces(start_coord):
+    #Copy list
+    new_list = board_coords[:]
+
+    # Remove element
+    new_list.remove(start_coord)
+
+    #create randomized list
+    random.shuffle(new_list)
+
+    # Take the first 8 elements of the now randomized list
+    return new_list[0:8]
+
+
 ##############################
 #
 #    target_mode_service Run
@@ -106,11 +125,7 @@ def target_mode_service_run(data):
     target = find_furthest(data[1])
     print "Initial Postion: {}    ".format(data[1]),
     print "Target Position: {} ".format(target[1])
-    #create randomized 8 pieces
-    random.shuffle(shuffle_coords)
-    # Take the first 8 elements of the now randomized array
-    opposition = shuffle_coords[0:8]
-    print ("Your opponent has pieces at:")
+    opposition = get_random_pieces(data[1])
     print opposition
     if(data[0] == 'queen'):
         s_path = shortest_path(queen_graph, data[1], target[1])

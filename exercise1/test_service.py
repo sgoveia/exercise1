@@ -17,6 +17,7 @@
 from data_structures import *
 from rules_service import *
 from target_mode_service import *
+from collector_service import *
 
 
 ##############################
@@ -67,3 +68,19 @@ def test_service_target_mode_run():
     for piece in board_coords:
         target_mode_service_run(['knight', piece])
 
+
+##############################
+#
+#    test_service_collector_mode_run
+#
+##############################
+def test_service_collector_mode_run():
+    # Run Queen Test
+    for piece in board_coords:
+        collector_service_run(['queen', piece])
+    # Run Rook Test
+    for piece in board_coords:
+        collector_service_run(['rook', piece])
+    # Run Knight Test
+    for piece in board_coords:
+        collector_service_run(['knight', piece])

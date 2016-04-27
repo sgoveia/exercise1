@@ -28,6 +28,7 @@ def get_key(dic, value):
         if (dic[key] == value):
             return key
 
+
 ##############################
 #
 #    breadth-first search
@@ -62,5 +63,3 @@ def shortest_path(g, start, end):
                 child = parent
             return list(reversed(revpath))
     return  None
-
-

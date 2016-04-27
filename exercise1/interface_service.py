@@ -20,7 +20,7 @@ from validation_service import *
 from test_service import *
 from rules_service import *
 from target_mode_service import *
-
+from collector_service import *
 
 #Get Python version
 py3 = version_info[0] > 2
@@ -38,9 +38,9 @@ data_pair.append(0)
 ##############################
 def enter_mode():
     if py3:
-        response = input("1. Please select mode (S)tandard or (T)arget: ")
+        response = input("1. Please select mode (S)tandard or (T)arget or (C)ollector: ")
     else:
-        response = raw_input("1. Please select mode (S)tandard or (T)arget: ")
+        response = raw_input("1. Please select mode (S)tandard or (T)arget or (C)ollector: ")
     user_input = str(response.lower())
     try:
         check = check_mode(user_input)
@@ -54,9 +54,12 @@ def enter_mode():
                 mode['mode'] = user_input
                 if(mode['mode'] == 's'):
                     print ("\nYou are in Standard Mode!")
-                else:
+                elif(mode['mode'] == 't'):
                     print("\nYou are in Target Mode!")
                     target_mode_service_init()
+                else:
+                    print("\nYou are in Collector Mode!")
+                    collector_service_init()
 
     except:
         print "\n\nWow somthing went really wrong. Sorry, Goodbye!"
@@ -84,9 +87,14 @@ def enter_piece():
                 return user_input
             else:
                 if(user_input == 'test' and mode['mode'] == 's'):
-                    test_service_run()
+                    test_service_standard_mode_run()
+                    return 'q'
                 elif(user_input == 'test' and mode['mode'] == 't'):
                     test_service_target_mode_run()
+                    return 'q'
+                elif(user_input == 'test' and mode['mode'] == 'c'):
+                    test_service_collector_mode_run()
+                    return 'q'
                 else:
                     data_pair[0] = ''
                     data_pair[1] = ''
@@ -117,15 +125,22 @@ def enter_coodinate():
                 return user_input
             else:
                 if(user_input == 'test' and mode['mode'] == 's'):
-                        test_service_run()
+                        test_service_standard_mode_run()
+                        return 'q'
                 elif(user_input == 'test' and mode['mode'] == 't'):
                         test_service_target_mode_run()
+                        return 'q'
+                elif(user_input == 'test' and mode['mode'] == 'c'):
+                        test_service_collector_mode_run()
+                        return 'q'
                 else:
                     data_pair[1] = user_input
                     if(mode['mode'] == 's'):
                         rules_service_run(data_pair)
-                    else:
+                    elif(mode['mode'] == 't'):
                         target_mode_service_run(data_pair)
+                    else:
+                        collector_service_run(data_pair)
 
     except:
         print "\n\nWow somthing went really wrong. Sorry, Goodbye!"
