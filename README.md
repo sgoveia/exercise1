@@ -61,4 +61,4 @@ To Exit program:
 
 
 #### Design Chocies:
-Devloped with simplisitc modularity in mind, I intintaliy choose to not use classes. The goal was to develop this simple program using a single module to house mutable global data structrues, and with pragmatic clarity make reuse of module method calls.    
+Developed with simplistic modularity in mind, I intentionally choose to not use classes. The goal was to develop this simple program using a single module to house mutable global data structures, and with pragmatic clarity make reuse of module method calls.    
